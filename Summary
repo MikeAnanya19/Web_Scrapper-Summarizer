@@ -1,0 +1,34 @@
+### **Code Summary:**
+
+1. **Web Scraping (Step 1)**:
+   - The user inputs a topic, and the code constructs a Wikipedia URL for that topic.
+   - The code sends a request to Wikipedia and retrieves the page content using `requests` and `BeautifulSoup`.
+
+2. **Text Processing**:
+   - **Tokenization and Stopword Removal (Step 2)**:
+     - The text from the page is tokenized into individual words.
+     - Stopwords (common words like "and", "the") and punctuation are removed from the tokens.
+
+   - **Stemming or Lemmatization (Step 3)**:
+     - The code lemmatizes (reduces words to their base form) the filtered tokens, which helps in standardizing the text for analysis.
+
+   - **POS Tagging (Step 4)**:
+     - Part-of-Speech tagging is applied to the lemmatized text, assigning grammatical labels (e.g., nouns, verbs) to each word.
+
+3. **Frequency Distribution & Visualization**:
+   - **Frequency Distribution (Step 5)**:
+     - The code calculates and displays the frequency of the most common words in the lemmatized text.
+     - A plot visualizing the 11 most frequent words is generated.
+   - **Word Cloud (Step 6)**:
+     - A word cloud is created to visualize the frequency of words in a more visually appealing format.
+
+4. **Text Summarization (Step 7)**:
+   - The code uses a pre-trained BART model from the `transformers` library to summarize the text.
+   - The input text is truncated to fit within the model’s token limit (1024 tokens).
+   - The summary is generated with specified length constraints (`max_length` and `min_length`).
+
+5. **Output**:
+   - The final output includes the Wikipedia page title, frequency distribution plot, word cloud, and a generated summary of the text content.
+
+### **Purpose**:
+The code is designed to scrape a Wikipedia page, clean and process the text, analyze word frequencies, visualize them, and then produce a concise summary using modern NLP techniques.
